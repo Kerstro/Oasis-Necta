@@ -181,22 +181,21 @@ nav a[aria-current="page"] {
 }
 
 /* hero photo: soft crop */
-/* .hero > .zoom {
+.hero > .zoom {
   aspect-ratio: 5 / 4;
 }
 .hero > .zoom img {
-  height: 100%;
+  aspect-ratio: 5 / 4;
   object-fit: fill;
   object-position: center;
-} */
+}
 .service-band
 {
   background: #fff;
   color: var(--fy);
 }
-
 .footer-band {
-  background: #efa914;
+  background: #fff;
   color: var(--fg);
 }
 .ben {
@@ -394,7 +393,7 @@ footer a {
 .zoom img {
   display: block;
   width: 100%;
-  transition: transform 0.45s ease;
+  transition: transform 0.55s ease;
 }
 @media (hover: hover) {
   .zoom:hover img {
