@@ -1,0 +1,417 @@
+/* Oasis Necta Ltd - site styles */
+
+:root {
+  --bg: #e9e8e3;
+  --fg: #0b0b0b;
+  --mut: #5a5a55;
+  --card: #f5f3f3;
+  --ln: #71706b;
+  --bd: #8c8c86;
+  --y: #ffc60a;
+  --oy: #0b0b0b;
+  --g: #25d366;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  height: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font:
+    400 17px/1.55 Inter,
+    system-ui,
+    Arial,
+    sans-serif;
+}
+h1,
+h2,
+h3 {
+  font-family: Anton, Impact, "Arial Narrow", sans-serif;
+  /* font-weight: 500; */
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5em;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 500;
+}
+h2 {
+  font-size: clamp(1.4rem, 4.5vw, 2.5rem);
+  font-weight: 400;
+}
+h3 {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+p {
+  margin: 0 0 1em;
+  max-width: 62ch;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--fg);
+  outline-offset: 2px;
+}
+.w {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.sec {
+  padding: 44px 0;
+}
+.hw {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  padding: 12px 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font:
+    400 1.5rem/1 Anton,
+    Impact,
+    sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+.brand img {
+  width: 60px;
+  height: 56px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  padding: 3px;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 1 1 100%;
+}
+nav a {
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+nav a[aria-current="page"] {
+  background: var(--y);
+  color: var(--oy);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 2px solid var(--y);
+  background: var(--y);
+  color: var(--oy);
+  font:
+    700 1rem Inter,
+    sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn.o {
+  background: #fff;
+  color: var(--fg);
+}
+.btn.wa {
+  background: var(--g);
+  border-color: var(--g);
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.view {
+  display: none;
+}
+.view.on {
+  display: block;
+}
+.hero {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+.hero img,
+.ph {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+.ph {
+  aspect-ratio: 4/3;
+  background: var(--bg);
+  border: 2px dashed var(--bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mut);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 8px;
+}
+
+/* hero photo: soft crop */
+.hero > .zoom {
+  aspect-ratio: 5 / 4;
+}
+.hero > .zoom img {
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+}
+.band {
+  background: #fff;
+  color: var(--fg);
+}
+.ben {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ben li {
+  font:
+    400 1.25rem/1.15 Anton,
+    Impact,
+    sans-serif;
+  text-transform: uppercase;
+  padding: 14px;
+  border-left: 6px solid var(--y);
+}
+.steps {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.steps li {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 16px;
+}
+.steps b {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--y);
+  color: var(--oy);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.steps strong {
+  display: block;
+  font:
+    400 1.2rem Anton,
+    Impact,
+    sans-serif;
+  text-transform: uppercase;
+}
+.board {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 640px;
+}
+.board div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--ln);
+}
+.board div:last-child {
+  border: 0;
+}
+.board span {
+  font:
+    400 1.2rem Anton,
+    Impact,
+    sans-serif;
+  text-transform: uppercase;
+}
+.tag {
+  background: var(--y);
+  color: var(--oy);
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 14px;
+}
+.card .ph {
+  margin-bottom: 12px;
+}
+.note {
+  color: var(--mut);
+  font-size: 0.9rem;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--ln);
+}
+.item .n {
+  flex: 1;
+}
+.item .p {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.q {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.q button {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  border: 0;
+  background: var(--y);
+  color: var(--oy);
+  font: 700 1.2rem Inter;
+  cursor: pointer;
+}
+.q span {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+#bar {
+  display: none;
+  position: sticky;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 8px);
+  z-index: 15;
+  background: #fff;
+  color: var(--fg);
+  border: 2px solid var(--y);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 20px;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#bar b {
+  margin-right: auto;
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px;
+  font: inherit;
+  color: var(--fg);
+  background: #fff;
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+}
+footer {
+  margin-top: 40px;
+  padding: 30px 0;
+}
+footer a {
+  color: inherit;
+}
+@media (min-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+@media (min-width: 1100px) {
+  nav {
+    flex: 0 1 auto;
+    margin-left: auto;
+  }
+}
+
+/* ---------- Hover zoom on pictures ----------
+   Wrap any <img> in <div class="zoom"> to give it the hover zoom. */
+.zoom {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.zoom img {
+  display: block;
+  width: 100%;
+  transition: transform 0.45s ease;
+}
+@media (hover: hover) {
+  .zoom:hover img {
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zoom img {
+    transition: none;
+  }
+  .zoom:hover img {
+    transform: none;
+  }
+}
+.card .zoom {
+  margin-bottom: 12px;
+}
+
+/* ---------- Gallery tiles ---------- */
+.tile {
+  aspect-ratio: 4 / 3;
+}
+.tile img {
+  height: 100%;
+  object-fit: cover;
+}
