@@ -1,0 +1,15 @@
+Changes
+
+Move the "Oasis necta" and logo more to the left margin
+Normal green WhatsApp redirecting button 
+Milky white theme which means black things now change to white but let yellow be.
+
+The WhatsApp button should be removed from the menu bar and also white lines around yellow buttons or make them the same yellow for uniformity.
+
+At the menu bar:
+1. Remove the horizontal scroll bar
+2. Merge training inside/under Contract beekeeping
+3. Merge Gallery to be inside/under About and team
+4. Remove the white line under the menu bar
+5. Allow the menu bar to merge with the page and be able to scroll together with the whole page. 
+
