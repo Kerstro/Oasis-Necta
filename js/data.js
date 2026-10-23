@@ -76,6 +76,29 @@ var CAT = [
 // Gallery: [file name inside the photos/ folder, description for screen readers]
 // Add a photo: copy it into photos/ then add a line below.
 var GALLERY = [
-  ["team-in-apiary.jpg", "The Oasis Necta team in the apiary"],
+  ["p/team-in-apiary.jpg", "The Oasis Necta team in the apiary"],
+  ["p/p (1).jpeg", ""],
+  ["p/p (2).jpeg", ""],
+  ["p/p (3).jpeg", ""],
+  ["p/p (4).jpeg", ""],
+  ["p/p (5).jpeg", ""],
+  ["p/p (6).jpeg", ""],
+  ["p/p (7).jpeg", ""],
+  ["p/p (8).jpeg", ""],
+  ["p/p (9).jpeg", ""],
+  ["p/p (10).jpeg", ""],
+  ["p/p (11).jpeg", ""],
+  ["p/p (12).jpeg", ""],
+  ["p/p (13).jpeg", ""],
+
+  ["t/T (1).jpeg", ""],
+  ["t/T (2).jpeg", ""],
+  ["t/T (3).jpeg", ""],
+  ["t/T (4).jpeg", ""],
+  ["t/T (5).jpeg", ""],
+  ["t/T (6).jpeg", ""],
+
+
+
   // ["field-day.jpg", "Beekeepers at a training day"],
 ];

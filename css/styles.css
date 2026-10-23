@@ -181,16 +181,22 @@ nav a[aria-current="page"] {
 }
 
 /* hero photo: soft crop */
-.hero > .zoom {
+/* .hero > .zoom {
   aspect-ratio: 5 / 4;
 }
 .hero > .zoom img {
   height: 100%;
   object-fit: fill;
   object-position: center;
-}
-.band {
+} */
+.service-band
+{
   background: #fff;
+  color: var(--fy);
+}
+
+.footer-band {
+  background: #efa914;
   color: var(--fg);
 }
 .ben {
