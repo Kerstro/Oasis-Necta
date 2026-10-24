@@ -96,8 +96,16 @@
 
       <!-- CONTRACT -->
       <section class="view" id="v-contract">
+        <div
+          class="banner page-head"
+          style="
+            background-image: url(&quot;images/banner-contract.jpg&quot;);
+            background-position: center 30%;
+          "
+        >
+          <div class="w"><h1>Contractual beekeeping</h1></div>
+        </div>
         <div class="w sec">
-          <h1>Contractual beekeeping</h1>
           <p>
             When you buy hives from Oasis Necta, you join our contract
             beekeeping programme. You keep the bees. We make sure you are
@@ -130,6 +138,61 @@
             support and free training. For now, training is free with a hive
             purchase.
           </p>
+          <!-- Training photos: swap or add pictures from photos/t -->
+          <div class="photos" data-group>
+            <div
+              class="zoom tile openable"
+              tabindex="0"
+              role="button"
+              aria-label="View larger picture"
+            >
+              <img
+                src="photos/t/T (1).jpeg"
+                alt="Oasis Necta trainers demonstrating beekeeping to participants at an outdoor training"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div
+              class="zoom tile openable"
+              tabindex="0"
+              role="button"
+              aria-label="View larger picture"
+            >
+              <img
+                src="photos/t/T (2).jpeg"
+                alt="A trainer presenting a hive to a large group at an outdoor training"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div
+              class="zoom tile openable"
+              tabindex="0"
+              role="button"
+              aria-label="View larger picture"
+            >
+              <img
+                src="photos/t/T (3).jpeg"
+                alt="Participants seated outdoors listening during an Oasis Necta training session"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div
+              class="zoom tile openable"
+              tabindex="0"
+              role="button"
+              aria-label="View larger picture"
+            >
+              <img
+                src="photos/t/T (4).jpeg"
+                alt="Participants seated on chairs under a large tree at an Oasis Necta training"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
           <div class="grid">
             <div class="card">
               <h3>Buy your hives</h3>
@@ -164,7 +227,22 @@
         </div>
         <div class="w sec" style="padding-top: 0">
           <h2>We buy your produce</h2>
-          <div class="board"></div>
+          <div class="split">
+            <div class="board"></div>
+            <div
+              class="zoom tile openable"
+              tabindex="0"
+              role="button"
+              aria-label="View larger picture"
+            >
+              <img
+                src="photos/p/p (6).jpeg"
+                alt="Jars of Oasis Necta honey"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
           <p class="note" style="margin-top: 10px">
             Prices as listed in October 2026 and subject to change.
           </p>
@@ -242,8 +320,16 @@
 
       <!-- TEAM -->
       <section class="view" id="v-team">
+        <div
+          class="banner page-head"
+          style="
+            background-image: url(&quot;images/banner-about.jpg&quot;);
+            background-position: center 45%;
+          "
+        >
+          <div class="w"><h1>About Oasis Necta</h1></div>
+        </div>
         <div class="w sec">
-          <h1>About Oasis Necta</h1>
           <p>
             Oasis Necta Ltd is a beekeeping company based in Nairobi. We offer
             contract beekeeping, technical support and training, and we give
@@ -321,41 +407,67 @@
             >
           </div>
           <!-- Gallery photos: put files in the photos/ folder and list them in js/data.js -->
-          <div class="grid" id="gallery-grid"></div>
+          <div class="grid" id="gallery-grid" data-group></div>
         </div>
       </section>
 
       <!-- CONTACT -->
       <section class="view" id="v-contact">
-        <div class="w sec">
-          <h1>Contact us</h1>
-          <div
-            class="grid"
-            style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"
-          >
-            <div>
-              <p>
-                <strong>Call or WhatsApp</strong><br /><a
-                  href="tel:+254726897456"
-                  >0726 897456</a
-                >
-              </p>
-              <p>
-                <strong>Email</strong><br /><a
-                  href="mailto:oasisnectaltd1@gmail.com"
-                  >oasisnectaltd1@gmail.com</a
-                >
-              </p>
-              <p>
-                <strong>Postal address</strong><br />P.O. Box 8946 – 00200, City
-                Square, Nairobi, Kenya
-              </p>
+        <div
+          class="banner page-head"
+          style="
+            background-image: url(&quot;images/banner-contact.jpg&quot;);
+            background-position: center 50%;
+          "
+        >
+          <div class="w"><h1>Contact us</h1></div>
+        </div>
+        <div class="w wide sec">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="contact-text">
+                <p>
+                  <strong>Call or WhatsApp</strong><br /><a
+                    href="tel:+254726897456"
+                    >0726 897456</a
+                  >
+                </p>
+                <p>
+                  <strong>Email</strong><br /><a
+                    href="mailto:oasisnectaltd1@gmail.com"
+                    >oasisnectaltd1@gmail.com</a
+                  >
+                </p>
+                <p>
+                  <strong>Postal address</strong><br />P.O. Box 8946 – 00200,
+                  City Square, Nairobi, Kenya
+                </p>
+                <p>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&amp;query=City+Square+Nairobi+Kenya"
+                    target="_blank"
+                    rel="noopener"
+                    >Open in Google Maps</a
+                  >
+                </p>
+              </div>
+              <div class="card">
+                <h2 style="font-size: 1.5rem">Message us on WhatsApp</h2>
+                <label>Your name<input id="fn" autocomplete="name" /></label
+                ><label
+                  >Your message<textarea id="fm" rows="4"></textarea></label
+                ><button class="btn" onclick="sendC()">Open WhatsApp</button>
+              </div>
             </div>
-            <div class="card">
-              <h2 style="font-size: 1.5rem">Message us on WhatsApp</h2>
-              <label>Your name<input id="fn" autocomplete="name" /></label
-              ><label>Your message<textarea id="fm" rows="4"></textarea></label
-              ><button class="btn" onclick="sendC()">Open WhatsApp</button>
+            <!-- Map: to pin your exact premises, open Google Maps, choose Share > Embed a map, and paste its src below -->
+            <div class="map-wrap">
+              <iframe
+                title="Map showing Oasis Necta Ltd, City Square, Nairobi"
+                src="https://www.google.com/maps?q=City%20Square%2C%20Nairobi%2C%20Kenya&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
         </div>

@@ -198,6 +198,14 @@ nav a[aria-current="page"] {
   padding: 0;
   list-style: none;
 }
+.contact-info .card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  padding: 24px;
+  margin-left: 20px;
+}
 .ben li {
   font:
     600 1.25rem/1.15 Fraunces,
@@ -220,6 +228,10 @@ nav a[aria-current="page"] {
   border-radius: 8px;
   padding: 16px;
 }
+.contact-text {
+  margin-left: 40px;
+}
+
 .steps b {
   display: inline-flex;
   width: 34px;
@@ -503,4 +515,146 @@ footer a {
   margin: 0;
   font-size: 0.85rem;
   color: var(--mut);
+}
+
+/* ---------- Page headers (photo behind the page title) ---------- */
+.page-head {
+  display: flex;
+  align-items: center;
+  min-height: clamp(180px, 58vh, 480px);
+}
+.page-head::before {
+  background: rgba(233, 232, 227, 0.203);
+}
+.page-head > .w {
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.page-head h1 {
+  margin: 0;
+}
+
+/* ---------- Picture blocks ---------- */
+.openable {
+  cursor: zoom-in;
+}
+.openable:focus-visible {
+  outline: 3px solid var(--fg);
+  outline-offset: 2px;
+}
+.photos {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 20px 0 28px;
+}
+.split {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
+}
+.split .board {
+  max-width: none;
+}
+.split .tile {
+  aspect-ratio: auto;
+  min-height: 240px;
+}
+
+/* ---------- Contact page: details + message on the left, map on the right ---------- */
+.w.wide {
+  max-width: 1240px;
+}
+.contact-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(300px, 1fr) 1.5fr;
+  align-items: stretch;
+}
+.contact-info {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.map-wrap {
+  position: relative;
+  min-height: 420px;
+  background: var(--card);
+  border-radius: 8px;
+}
+.map-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .map-wrap {
+    min-height: 360px;
+  }
+}
+
+/* ---------- Picture viewer ---------- */
+#lb {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 12px 24px;
+  background: rgba(15, 15, 15, 0.92);
+}
+#lb[hidden] {
+  display: none;
+}
+#lb figure {
+  margin: 0;
+  max-width: min(1100px, 100%);
+  text-align: center;
+}
+#lb img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: calc(100vh - 150px);
+  border-radius: 8px;
+}
+#lb figcaption {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+#lb button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--y);
+  color: var(--oy);
+  font: 700 1.8rem/1 Inter, sans-serif;
+  cursor: pointer;
+}
+#lb button[hidden] {
+  display: none;
+}
+.lb-x {
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  right: 12px;
+}
+.lb-p {
+  left: 12px;
+  top: 50%;
+}
+.lb-n {
+  right: 12px;
+  top: 50%;
 }

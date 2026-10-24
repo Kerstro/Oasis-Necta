@@ -25,3 +25,9 @@ Edit `BUY` (buying prices) and `CAT` (hives and equipment) in `js/data.js`.
 ## Hover zoom
 Wrap any picture in `<div class="zoom"> ... </div>` and it zooms gently on hover
 (computers only; it switches off for visitors who prefer reduced motion).
+
+## Page headers and picture viewer
+- A page header with a photo behind the title: `<div class="banner page-head" style="background-image: url('images/photo.jpg')">` with the title inside.
+- Click-to-enlarge pictures: put the `<img>` inside `<div class="zoom tile openable" tabindex="0" role="button">`. Pictures inside the same `data-group` block can be browsed with the arrows.
+- Map: change the `src` of the iframe in the Contact section (Google Maps > Share > Embed a map).
+
