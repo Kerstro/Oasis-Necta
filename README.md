@@ -8,7 +8,7 @@ oasis-necta/
 ├── css/styles.css    all styling (colours are the variables at the top)
 ├── js/data.js        things you edit: prices, steps, WhatsApp number, gallery photo list
 ├── js/main.js        site behaviour (menu, quote basket, gallery) - rarely needs touching
-├── images/           site pictures (logo.png, hero-team.jpg)
+├── images/           site pictures (logo.png, hero-beehives.jpg)
 └── photos/           gallery pictures
 ```
 
