@@ -1,7 +1,7 @@
 /* Oasis Necta Ltd - site styles */
 
 :root {
-  --bg: #e9e8e3;
+  --bg: #e9e8e3;/*rgba(189, 168, 141, 0.258); */
   --fg: #0b0b0b;
   --mut: #5a5a55;
   --card: #f5f3f3;
@@ -30,7 +30,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font:
-    400 17px/1.55 Inter,
+    300 17px/1.55 Inter,
     system-ui,
     Arial,
     sans-serif;
@@ -38,24 +38,24 @@ body {
 h1,
 h2,
 h3 {
-  font-family: Anton, Impact, "Arial Narrow", sans-serif;
+  font-family: Fraunces, Impact, "Arial Narrow", sans-serif;
   /* font-weight: 500; */
   line-height: 1.08;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
   margin: 0 0 0.5em;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 h1 {
-  font-size: clamp(2rem, 7vw, 3.5rem);
-  font-weight: 500;
+  font-size: clamp(1.7rem, 7vw, 3.5rem);
+  font-weight: 700;
 }
 h2 {
   font-size: clamp(1.4rem, 4.5vw, 2.5rem);
-  font-weight: 400;
+  font-weight: 600;
 }
 h3 {
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 600;
 }
 p {
   margin: 0 0 1em;
@@ -81,7 +81,8 @@ a {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 16px;
-  padding: 12px 20px;
+  padding: 6px 20px;
+  background-color: antiquewhite;
 }
 .brand {
   display: flex;
@@ -89,7 +90,7 @@ a {
   gap: 10px;
   text-decoration: none;
   font:
-    400 1.5rem/1 Anton,
+    400 1.5rem/1 Fraunces,
     Impact,
     sans-serif;
   text-transform: uppercase;
@@ -156,12 +157,12 @@ nav a[aria-current="page"] {
 .view.on {
   display: block;
 }
-.hero {
-  display: grid;
-  gap: 28px;
-  align-items: center;
+/* .w.hero-text h1 {
+  color: #B4967A;
+} */
+.w.hero-text p {
+  font-weight: 600;
 }
-.hero img,
 .ph {
   width: 100%;
   border-radius: 8px;
@@ -180,15 +181,6 @@ nav a[aria-current="page"] {
   padding: 8px;
 }
 
-/* hero photo: soft crop */
-.hero > .zoom {
-  aspect-ratio: 5 / 4;
-}
-.hero > .zoom img {
-  aspect-ratio: 5 / 4;
-  object-fit: fill;
-  object-position: center;
-}
 .service-band
 {
   background: #fff;
@@ -206,12 +198,20 @@ nav a[aria-current="page"] {
   padding: 0;
   list-style: none;
 }
+.contact-info .card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  padding: 24px;
+  margin-left: 20px;
+}
 .ben li {
   font:
-    400 1.25rem/1.15 Anton,
+    600 1.25rem/1.15 Fraunces,
     Impact,
     sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding: 14px;
   border-left: 6px solid var(--y);
 }
@@ -228,6 +228,10 @@ nav a[aria-current="page"] {
   border-radius: 8px;
   padding: 16px;
 }
+.contact-text {
+  margin-left: 40px;
+}
+
 .steps b {
   display: inline-flex;
   width: 34px;
@@ -242,10 +246,10 @@ nav a[aria-current="page"] {
 .steps strong {
   display: block;
   font:
-    400 1.2rem Anton,
+    600 1.2rem Fraunces,
     Impact,
     sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .board {
   background: #fff;
@@ -266,10 +270,10 @@ nav a[aria-current="page"] {
 }
 .board span {
   font:
-    400 1.2rem Anton,
+    500 1.2rem Fraunces,
     Impact,
     sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .tag {
   background: var(--y);
@@ -372,11 +376,6 @@ footer {
 footer a {
   color: inherit;
 }
-@media (min-width: 800px) {
-  .hero {
-    grid-template-columns: 1fr 1.6fr;
-  }
-}
 @media (min-width: 1100px) {
   nav {
     flex: 0 1 auto;
@@ -419,4 +418,243 @@ footer a {
 .tile img {
   height: 100%;
   object-fit: cover;
+}
+
+/* ---------- Background-picture banners ----------
+   Add class="banner" and style="background-image: url('images/your-photo.jpg')"
+   to any section. The photo sits behind everything; a flat milky veil keeps the
+   text on top easy to read. */
+.banner {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--bg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(233, 232, 227, 0.4);
+}
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: clamp(440px, 72vh, 680px);
+  background-position: center 40%;
+}
+.hero > .w {
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+/* ---------- Footer ---------- */
+.footer-grid {
+  display: grid;
+  gap: 16px 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.f-brand p {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+}
+.f-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font: 400 1.6rem/1 Fraunces, Impact, sans-serif;
+  text-transform: capitalize;
+}
+.f-logo img {
+  width: 48px;
+  height: 45px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+}
+.f-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+.f-title::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  margin-top: 4px;
+  background: var(--y);
+}
+.footer-grid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-grid li {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+.footer-grid li a {
+  display: inline-block;
+  padding: 2px 0;
+  text-decoration: none;
+}
+.footer-grid li a:hover {
+  text-decoration: underline;
+}
+.footer-base {
+  margin-top: 0px;
+  padding-top: 5px;
+  border-top: 0.2px solid rgba(0, 0, 0, 0.12);
+}
+.footer-base p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--mut);
+}
+
+/* ---------- Page headers (photo behind the page title) ---------- */
+.page-head {
+  display: flex;
+  align-items: center;
+  min-height: clamp(180px, 58vh, 480px);
+}
+.page-head::before {
+  background: rgba(233, 232, 227, 0.203);
+}
+.page-head > .w {
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.page-head h1 {
+  margin: 0;
+}
+
+/* ---------- Picture blocks ---------- */
+.openable {
+  cursor: zoom-in;
+}
+.openable:focus-visible {
+  outline: 3px solid var(--fg);
+  outline-offset: 2px;
+}
+.photos {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 20px 0 28px;
+}
+.split {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
+}
+.split .board {
+  max-width: none;
+}
+.split .tile {
+  aspect-ratio: auto;
+  min-height: 240px;
+}
+
+/* ---------- Contact page: details + message on the left, map on the right ---------- */
+.w.wide {
+  max-width: 1240px;
+}
+.contact-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(300px, 1fr) 1.5fr;
+  align-items: stretch;
+}
+.contact-info {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.map-wrap {
+  position: relative;
+  min-height: 420px;
+  background: var(--card);
+  border-radius: 8px;
+}
+.map-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .map-wrap {
+    min-height: 360px;
+  }
+}
+
+/* ---------- Picture viewer ---------- */
+#lb {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 12px 24px;
+  background: rgba(15, 15, 15, 0.92);
+}
+#lb[hidden] {
+  display: none;
+}
+#lb figure {
+  margin: 0;
+  max-width: min(1100px, 100%);
+  text-align: center;
+}
+#lb img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: calc(100vh - 150px);
+  border-radius: 8px;
+}
+#lb figcaption {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+#lb button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--y);
+  color: var(--oy);
+  font: 700 1.8rem/1 Inter, sans-serif;
+  cursor: pointer;
+}
+#lb button[hidden] {
+  display: none;
+}
+.lb-x {
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  right: 12px;
+}
+.lb-p {
+  left: 12px;
+  top: 50%;
+}
+.lb-n {
+  right: 12px;
+  top: 50%;
 }

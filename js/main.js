@@ -8,7 +8,10 @@ function gallery() {
   if (!g) return;
   GALLERY.forEach(function (p) {
     var box = document.createElement("div");
-    box.className = "zoom tile";
+    box.className = "zoom tile openable";
+    box.tabIndex = 0;
+    box.setAttribute("role", "button");
+    box.setAttribute("aria-label", "View larger picture");
     var img = new Image();
     img.src = "photos/" + p[0];
     img.alt = p[1];
@@ -16,6 +19,9 @@ function gallery() {
     img.onerror = function () {
       box.className = "ph";
       box.textContent = "Photo coming soon";
+      box.removeAttribute("role");
+      box.removeAttribute("tabindex");
+      box.removeAttribute("aria-label");
     };
     box.appendChild(img);
     g.appendChild(box);
@@ -26,6 +32,73 @@ function gallery() {
     ph.textContent = "Photo coming soon";
     g.appendChild(ph);
   }
+}
+// Click-to-enlarge viewer. Any picture inside an element with class "openable"
+// opens full size; pictures inside the same [data-group] block can be browsed
+// with the arrows or the left/right keys.
+function lightbox() {
+  var box = document.createElement("div");
+  box.id = "lb";
+  box.hidden = true;
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "Picture viewer");
+  box.innerHTML =
+    '<button class="lb-x" aria-label="Close">&times;</button>' +
+    '<button class="lb-p" aria-label="Previous picture">&lsaquo;</button>' +
+    '<figure><img alt="" /><figcaption></figcaption></figure>' +
+    '<button class="lb-n" aria-label="Next picture">&rsaquo;</button>';
+  document.body.appendChild(box);
+  var big = box.querySelector("img"),
+    cap = box.querySelector("figcaption"),
+    list = [],
+    at = 0,
+    opener = null;
+  function show(i) {
+    at = (i + list.length) % list.length;
+    big.src = list[at].currentSrc || list[at].src;
+    big.alt = list[at].alt;
+    cap.textContent = list[at].alt;
+  }
+  function open(tile) {
+    var group = tile.closest("[data-group]") || tile;
+    list = Array.prototype.slice.call(group.querySelectorAll("img"));
+    opener = tile;
+    box.querySelector(".lb-p").hidden = box.querySelector(".lb-n").hidden =
+      list.length < 2;
+    show(Math.max(0, list.indexOf(tile.querySelector("img"))));
+    box.hidden = false;
+    document.body.style.overflow = "hidden";
+    box.querySelector(".lb-x").focus();
+  }
+  function close() {
+    box.hidden = true;
+    big.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (opener) opener.focus();
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest(".openable");
+    if (t && box.hidden) open(t);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (box.hidden) {
+      var t = e.target.closest && e.target.closest(".openable");
+      if (t && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        open(t);
+      }
+      return;
+    }
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(at - 1);
+    if (e.key === "ArrowRight") show(at + 1);
+  });
+  box.addEventListener("click", function (e) {
+    if (e.target.closest(".lb-x") || e.target === box) close();
+    else if (e.target.closest(".lb-p")) show(at - 1);
+    else if (e.target.closest(".lb-n")) show(at + 1);
+  });
 }
 var Q = {},
   ALL = [];
@@ -158,5 +231,6 @@ function show() {
 }
 build();
 gallery();
+lightbox();
 addEventListener("hashchange", show);
 show();
