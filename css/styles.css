@@ -521,7 +521,7 @@ footer a {
 .page-head {
   display: flex;
   align-items: center;
-  min-height: clamp(180px, 58vh, 480px);
+  min-height: clamp(180px, 78vh, 600px);
 }
 .page-head::before {
   background: rgba(233, 232, 227, 0.203);
