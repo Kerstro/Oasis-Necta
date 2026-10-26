@@ -103,9 +103,17 @@
             background-position: center 30%;
           "
         >
-          <div class="w"><h1>Contractual beekeeping</h1></div>
+          <div class="w">
+            <h1>Contractual beekeeping</h1>
+            <p>
+              Get familiar with our contractual beekeeping programme. Read our
+              contract terms and conditions.
+            </p>
+          </div>
         </div>
         <div class="w sec">
+          <h2 style="padding: 0; margin: 5px 0 16px">Our approach</h2>
+
           <p>
             When you buy hives from Oasis Necta, you join our contract
             beekeeping programme. You keep the bees. We make sure you are
@@ -327,9 +335,16 @@
             background-position: center 45%;
           "
         >
-          <div class="w"><h1>About Oasis Necta</h1></div>
+          <div class="w">
+            <h1>About Oasis Necta</h1>
+            <p>
+              Read more about our journey and values down below, and meet the
+              founder and team.
+            </p>
+          </div>
         </div>
         <div class="w sec">
+          <h2>Our story</h2>
           <p>
             Oasis Necta Ltd is a beekeeping company based in Nairobi. We offer
             contract beekeeping, technical support and training, and we give
@@ -420,54 +435,81 @@
             background-position: center 50%;
           "
         >
-          <div class="w"><h1>Contact us</h1></div>
+          <div class="w">
+            <h1>Contact us</h1>
+            <p>
+              Have questions or want to learn more about our services? Get in
+              touch with us!
+            </p>
+          </div>
         </div>
+        <!-- Horizontal band between the banner and contact section -->
+        <div class="see-details-band" aria-hidden="true">
+          <h2>See Details Below</h2>
+        </div>
+
         <div class="w wide sec">
           <div class="contact-grid">
+            <!-- LEFT COLUMN: contact details and WhatsApp card -->
             <div class="contact-info">
               <div class="contact-text">
+                <h2>Get in touch</h2>
+
                 <p>
-                  <strong>Call or WhatsApp</strong><br /><a
-                    href="tel:+254726897456"
-                    >0726 897456</a
-                  >
+                  <strong>Call or WhatsApp</strong><br />
+                  <a href="tel:+254726897456">0726 897456</a>
                 </p>
+
                 <p>
-                  <strong>Email</strong><br /><a
-                    href="mailto:oasisnectaltd1@gmail.com"
-                    >oasisnectaltd1@gmail.com</a
-                  >
+                  <strong>Email</strong><br />
+                  <a href="mailto:oasisnectaltd1@gmail.com">
+                    oasisnectaltd1@gmail.com
+                  </a>
                 </p>
+
                 <p>
-                  <strong>Postal address</strong><br />P.O. Box 8946 – 00200,
-                  City Square, Nairobi, Kenya
-                </p>
-                <p>
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&amp;query=City+Square+Nairobi+Kenya"
-                    target="_blank"
-                    rel="noopener"
-                    >Open in Google Maps</a
-                  >
+                  <strong>Postal address</strong><br />
+                  P.O. Box 8946 – 00200, City Square, Nairobi, Kenya
                 </p>
               </div>
-              <div class="card">
-                <h2 style="font-size: 1.5rem">Message us on WhatsApp</h2>
-                <label>Your name<input id="fn" autocomplete="name" /></label
-                ><label
-                  >Your message<textarea id="fm" rows="4"></textarea></label
-                ><button class="btn" onclick="sendC()">Open WhatsApp</button>
+
+              <div class="card contact-message">
+                <h3>Message us on WhatsApp</h3>
+
+                <label for="fn">Your name</label>
+                <input id="fn" autocomplete="name" />
+
+                <label for="fm">Your message</label>
+                <textarea id="fm" rows="4"></textarea>
+
+                <button class="btn" type="button" onclick="sendC()">
+                  Open WhatsApp
+                </button>
               </div>
             </div>
-            <!-- Map: to pin your exact premises, open Google Maps, choose Share > Embed a map, and paste its src below -->
-            <div class="map-wrap">
-              <iframe
-                title="Map showing Oasis Necta Ltd, City Square, Nairobi"
-                src="https://www.google.com/maps?q=City%20Square%2C%20Nairobi%2C%20Kenya&amp;output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
+
+            <!-- RIGHT COLUMN: location heading and map -->
+            <div class="contact-location">
+              <h2>Visit our location</h2>
+
+              <div class="map-wrap">
+                <iframe
+                  title="Map showing the City Square area in Nairobi"
+                  src="https://www.google.com/maps?q=City%20Square%2C%20Nairobi%2C%20Kenya&amp;output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <a
+                class="map-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=City+Square+Nairobi+Kenya"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open in Google Maps ↗
+              </a>
             </div>
           </div>
         </div>

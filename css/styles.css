@@ -157,11 +157,12 @@ nav a[aria-current="page"] {
 .view.on {
   display: block;
 }
-/* .w.hero-text h1 {
-  color: #B4967A;
-} */
+.w.hero-text h1 {
+  color: #fff;
+} 
 .w.hero-text p {
   font-weight: 600;
+  color: #fff;
 }
 .ph {
   width: 100%;
@@ -187,7 +188,7 @@ nav a[aria-current="page"] {
   color: var(--fy);
 }
 .footer-band {
-  background: #fff;
+  background: antiquewhite;
   color: var(--fg);
 }
 .ben {
@@ -437,7 +438,7 @@ footer a {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(233, 232, 227, 0.4);
+  background: /*rgba(233, 232, 227, 0.4);*/ rgba(77, 77, 74, 0.39);
 }
 .hero {
   display: flex;
@@ -524,7 +525,7 @@ footer a {
   min-height: clamp(180px, 78vh, 600px);
 }
 .page-head::before {
-  background: rgba(233, 232, 227, 0.203);
+  background: rgba(77, 77, 74, 0.39);
 }
 .page-head > .w {
   width: 100%;
@@ -563,44 +564,144 @@ footer a {
   min-height: 240px;
 }
 
-/* ---------- Contact page: details + message on the left, map on the right ---------- */
+/* Wider page container */
 .w.wide {
   max-width: 1240px;
 }
+
+/* Two balanced columns */
 .contact-grid {
   display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(300px, 1fr) 1.5fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 40px;
   align-items: stretch;
 }
+
+/* LEFT: details above the message card */
 .contact-info {
   display: grid;
-  gap: 12px;
+  gap: 24px;
   align-content: start;
+  min-width: 0;
 }
+
+/* Matching column headings */
+.contact-text h2,
+.contact-location h2 {
+  margin: 0 0 20px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+/* Contact detail spacing */
+.contact-text p {
+  margin: 0 0 16px;
+}
+
+.contact-text p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-text a {
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+
+/* WhatsApp message card */
+.contact-message {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  padding: 24px;
+  background: var(--card, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.contact-message h3 {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+}
+
+.contact-message label {
+  display: block;
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.contact-message input,
+.contact-message textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 12px;
+  font: inherit;
+  border: 1px solid #aaa99f;
+  border-radius: 6px;
+}
+
+.contact-message textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-message .btn {
+  width: 100%;
+  min-height: 48px;
+}
+
+/* RIGHT: heading, expanding map, then map link */
+.contact-location {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .map-wrap {
+  flex: 1;
+  min-height: 400px;
+  overflow: hidden;
+  background: var(--card, #ffffff);
+  border: 1.5px solid rgb(0, 0, 0);
+  border-radius: 12px;
+
+  /* Lets the iframe fill the map wrapper */
   position: relative;
-  min-height: 420px;
-  background: var(--card);
-  border-radius: 8px;
 }
+
 .map-wrap iframe {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 8px;
 }
+
+.map-link {
+  align-self: flex-start;
+  margin-top: 12px;
+  text-underline-offset: 3px;
+}
+
+/* Mobile: stack contact details above the map */
 @media (max-width: 800px) {
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
+
   .map-wrap {
-    min-height: 360px;
+    flex: none;
+    height: 320px;
+    min-height: 0;
+  }
+
+  .contact-message {
+    padding: 20px;
   }
 }
-
 /* ---------- Picture viewer ---------- */
 #lb {
   position: fixed;
@@ -657,4 +758,19 @@ footer a {
 .lb-n {
   right: 12px;
   top: 50%;
+}
+
+.banner.page-head .w {
+  color: #fff;
+  max-width: 360px;
+  align-items: bottom;
+}
+.see-details-band {
+  width: 100%;
+  height: 70px;
+  background-color: #56360f;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  padding: 10px;
 }
