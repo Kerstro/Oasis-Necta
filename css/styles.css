@@ -774,3 +774,109 @@ footer a {
   color: #fff;
   padding: 10px;
 }
+
+/* ---------- How it works: step icons ---------- */
+.steps li {
+  position: relative;
+}
+.steps b {
+  display: block;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: auto;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  background: none;
+  font: 600 0.95rem Inter, sans-serif;
+  color: var(--mut);
+}
+.step-ic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--y);
+  color: var(--oy);
+}
+.step-ic svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.step-ic circle {
+  fill: var(--y);
+}
+
+/* ---------- Scroll reveal: words spawn one by one ---------- */
+.rw .wd {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.7em) scale(0.92);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.rw.in .wd {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce), print {
+  .rw .wd {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Contract call-to-action band (handshake photo behind) ---------- */
+.contract-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(320px, 50vh, 460px);
+  margin: 12px 0 36px;
+  text-align: center;
+  background-color: #0b0b0b; /* shows if the photo is missing */
+}
+.contract-cta::before {
+  background: rgba(11, 11, 11, 0.62);
+}
+.contract-cta > .w {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: #fff;
+}
+.contract-cta h2 {
+  margin: 0 0 16px;
+  color: #fff;
+}
+.contract-cta > .w p {
+  max-width: 56ch;
+  margin: 0 auto 28px;
+  color: #fff;
+  font-weight: 600;
+}
+.contract-btn {
+  min-height: 58px;
+  padding: 14px 40px;
+  font-size: 1.15rem;
+  box-shadow: 0 0 0 4px rgba(255, 198, 10, 0.35);
+}
+.cta-note {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #fff;
+  opacity: 0.85;
+}

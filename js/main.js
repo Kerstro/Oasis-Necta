@@ -100,6 +100,71 @@ function lightbox() {
     else if (e.target.closest(".lb-n")) show(at + 1);
   });
 }
+// Icons for the "How it works" steps: Produce, Collect, Check, Pay
+function ic(inner) {
+  return (
+    '<span class="step-ic" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false">' +
+    inner +
+    "</svg></span>"
+  );
+}
+var STEP_ICONS = [
+  // Produce: a beehive
+  ic(
+    '<path d="M7 15h34l-3-6H10z"/><rect x="10" y="15" width="28" height="9" rx="1"/><rect x="10" y="24" width="28" height="9" rx="1"/><rect x="10" y="33" width="28" height="7" rx="1"/><path d="M19 19.5h10M19 28.5h10M13 40v4M35 40v4"/>',
+  ),
+  // Collect: a delivery truck
+  ic(
+    '<rect x="3" y="12" width="26" height="20" rx="2"/><path d="M29 19h8l7 8v5H29z"/><circle cx="13" cy="35" r="4"/><circle cx="36" cy="35" r="4"/>',
+  ),
+  // Check: a magnifying glass with a tick
+  ic(
+    '<circle cx="21" cy="21" r="12"/><path d="M30 30l13 13M15 21l4 4 8-8"/>',
+  ),
+  // Pay: money
+  ic(
+    '<rect x="4" y="12" width="40" height="24" rx="3"/><circle cx="24" cy="24" r="6"/><path d="M10 18h.01M38 30h.01"/>',
+  ),
+];
+
+// Scroll reveal: the words of each heading and paragraph "spawn" one after
+// another when the block scrolls into view (and on page load for the top).
+function revealWords() {
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+    return;
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add("in");
+          io.unobserve(en.target);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+  document
+    .querySelectorAll("main h1, main h2, main h3, main p")
+    .forEach(function (el) {
+      if (el.children.length || !el.textContent.trim()) return;
+      var words = el.textContent.trim().split(/\s+/),
+        step = Math.min(60, 900 / words.length);
+      el.textContent = "";
+      words.forEach(function (w, i) {
+        var s = document.createElement("span");
+        s.className = "wd";
+        s.textContent = w;
+        s.style.transitionDelay = Math.round(i * step) + "ms";
+        el.appendChild(s);
+        if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+      });
+      el.classList.add("rw");
+      io.observe(el);
+    });
+}
 var Q = {},
   ALL = [];
 function f(n) {
@@ -117,9 +182,11 @@ function build() {
   document.querySelectorAll(".steps").forEach(function (o) {
     o.innerHTML = STEPS.map(function (s, i) {
       return (
-        "<li><b>" +
+        "<li><b>0" +
         (i + 1) +
-        "</b><strong>" +
+        "</b>" +
+        STEP_ICONS[i] +
+        "<strong>" +
         s[0] +
         "</strong>" +
         s[1] +
@@ -232,5 +299,6 @@ function show() {
 build();
 gallery();
 lightbox();
+revealWords();
 addEventListener("hashchange", show);
 show();

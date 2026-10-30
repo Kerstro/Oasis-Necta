@@ -31,3 +31,10 @@ Wrap any picture in `<div class="zoom"> ... </div>` and it zooms gently on hover
 - Click-to-enlarge pictures: put the `<img>` inside `<div class="zoom tile openable" tabindex="0" role="button">`. Pictures inside the same `data-group` block can be browsed with the arrows.
 - Map: change the `src` of the iframe in the Contact section (Google Maps > Share > Embed a map).
 
+## Step icons and scroll animation
+- The icons on the "How it works" cards are the `STEP_ICONS` list in `js/main.js` (one per step, in the same order as `STEPS` in `js/data.js`).
+- Headings and paragraphs reveal word by word as they scroll into view (`revealWords()` in `js/main.js`, styles under "Scroll reveal" in `css/styles.css`). It switches itself off for visitors who prefer reduced motion.
+
+## Contract section
+- The band on the Contract beekeeping page links to `documents/oasis-necta-beekeeping-contract.pdf`. To update the contract, replace that file (keep the name).
+- Put a handshake photo at `images/handshake.jpg` and it appears behind the band. Until then the band is plain black.
