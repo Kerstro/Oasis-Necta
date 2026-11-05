@@ -38,3 +38,7 @@ Wrap any picture in `<div class="zoom"> ... </div>` and it zooms gently on hover
 ## Contract section
 - The band on the Contract beekeeping page links to `documents/oasis-necta-beekeeping-contract.pdf`. To update the contract, replace that file (keep the name).
 - Put a handshake photo at `images/handshake.jpg` and it appears behind the band. Until then the band is plain black.
+
+## Explore cards and spacing
+- The "Explore Oasis Necta" cards on the home page are the `explore-card` links in `index.html`; their pictures are in `images/cards/`. Change the `href="#..."` to point a card at another page.
+- Site-wide spacing is set in the "More breathing room" block at the end of `css/styles.css`. Increase or decrease `.sec` (space between sections) and `.w` (side margins) to taste.
