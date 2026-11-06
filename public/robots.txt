@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oasis-necta.onrender.com/sitemap.xml
+Sitemap: https://oasisnecta.onrender.com/sitemap.xml
