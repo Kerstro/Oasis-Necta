@@ -1,0 +1,44 @@
+/* Final visual refinements: stronger contract CTA, natural-color map, clearer dividers. */
+:root {
+  --line: #cbd2c9;
+}
+
+.text-link.light[href$="oasis-necta-beekeeping-contract.pdf"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 13px 16px;
+  background: rgba(246, 201, 71, 0.12);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  box-shadow: 0 0 0 4px rgba(246, 201, 71, 0.08);
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.text-link.light[href$="oasis-necta-beekeeping-contract.pdf"]:hover {
+  background: var(--yellow);
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 6px rgba(246, 201, 71, 0.13);
+}
+
+.map-wrap {
+  filter: none;
+}
+
+.hero-note {
+  border-top-color: rgba(255, 255, 255, 0.425);
+}
+
+.promise-grid > div {
+  border-right-color: rgba(24, 35, 30, 0.275);
+}
+
+.benefit-grid,
+.benefit-grid > div {
+  border-color: rgba(255, 255, 255, 0.225);
+}
+
+.footer-base {
+  border-top-color: rgba(255, 255, 255, 0.2125);
+}
