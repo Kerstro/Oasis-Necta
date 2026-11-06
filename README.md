@@ -1,44 +1,60 @@
-# Oasis Necta Ltd website
+# Oasis Necta Astro Website
 
-Open `index.html` in a browser, or in VS Code right-click it and choose **Open with Live Server**.
+## Project tree
 
-```
+```text
 oasis-necta/
-├── index.html        page content (all pages live here; the menu switches between them)
-├── css/styles.css    all styling (colours are the variables at the top)
-├── js/data.js        things you edit: prices, steps, WhatsApp number, gallery photo list
-├── js/main.js        site behaviour (menu, quote basket, gallery) - rarely needs touching
-├── images/           site pictures (logo.png, hero-beehives.jpg)
-└── photos/           gallery pictures
+├── public/
+│   ├── documents/
+│   │   └── oasis-necta-beekeeping-contract.pdf
+│   ├── images/
+│   │   ├── cards/
+│   │   ├── banner-about.jpg
+│   │   ├── banner-contact.jpg
+│   │   ├── banner-contract.jpg
+│   │   ├── hero-beehives.jpg
+│   │   └── logo.png
+│   └── photos/
+│       ├── p/
+│       └── t/
+├── src/
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-## Add gallery photos
-1. Copy the picture into `photos/`.
-2. Open `js/data.js` and add a line to `GALLERY`: `["file-name.jpg", "short description"],`
-3. Save. Missing files show a "Photo coming soon" box instead of a broken picture.
+## Run in VS Code
 
-Tip: resize photos to about 1200 px wide before adding them so the page loads fast on mobile data.
+1. Open this folder in VS Code.
+2. Open **Terminal → New Terminal**.
+3. Install dependencies:
 
-## Update prices
-Edit `BUY` (buying prices) and `CAT` (hives and equipment) in `js/data.js`.
+```bash
+npm install
+```
 
-## Hover zoom
-Wrap any picture in `<div class="zoom"> ... </div>` and it zooms gently on hover
-(computers only; it switches off for visitors who prefer reduced motion).
+4. Start the local website:
 
-## Page headers and picture viewer
-- A page header with a photo behind the title: `<div class="banner page-head" style="background-image: url('images/photo.jpg')">` with the title inside.
-- Click-to-enlarge pictures: put the `<img>` inside `<div class="zoom tile openable" tabindex="0" role="button">`. Pictures inside the same `data-group` block can be browsed with the arrows.
-- Map: change the `src` of the iframe in the Contact section (Google Maps > Share > Embed a map).
+```bash
+npm run dev
+```
 
-## Step icons and scroll animation
-- The icons on the "How it works" cards are the `STEP_ICONS` list in `js/main.js` (one per step, in the same order as `STEPS` in `js/data.js`).
-- Headings and paragraphs reveal word by word as they scroll into view (`revealWords()` in `js/main.js`, styles under "Scroll reveal" in `css/styles.css`). It switches itself off for visitors who prefer reduced motion.
+5. Open the local URL shown in the terminal, usually:
 
-## Contract section
-- The band on the Contract beekeeping page links to `documents/oasis-necta-beekeeping-contract.pdf`. To update the contract, replace that file (keep the name).
-- Put a handshake photo at `images/handshake.jpg` and it appears behind the band. Until then the band is plain black.
+```text
+http://localhost:4321
+```
 
-## Explore cards and spacing
-- The "Explore Oasis Necta" cards on the home page are the `explore-card` links in `index.html`; their pictures are in `images/cards/`. Change the `href="#..."` to point a card at another page.
-- Site-wide spacing is set in the "More breathing room" block at the end of `css/styles.css`. Increase or decrease `.sec` (space between sections) and `.w` (side margins) to taste.
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+The generated production files are placed in `dist/`.
